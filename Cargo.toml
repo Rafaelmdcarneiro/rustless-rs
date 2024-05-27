@@ -1,0 +1,58 @@
+[package]
+
+name = "rustless"
+version = "0.10.0"
+authors = ["Stanislav Panferov <fnight.m@gmail.com>"]
+description = "Rustless is a REST-like API micro-framework for Rust."
+repository = "https://github.com/rustless/rustless"
+documentation = "https://docs.rs/rustless/*/rustless/"
+keywords = ["api", "web", "hyper", "iron", "rest"]
+readme = "README.md"
+license = "MIT"
+
+[lib]
+name = "rustless"
+path = "src/lib.rs"
+
+[[test]]
+name = "tests"
+
+[features]
+default = ["iron_backend"]
+iron_backend = ["iron", "bodyparser", "plugin"]
+ssl = ["hyper/ssl", "iron/ssl"]
+
+[dependencies]
+regex = "0.1"
+lazy_static = "0.2"
+valico = "1"
+queryst = "1"
+jsonway = "1"
+url = "1"
+error = "0.1"
+typemap = "0.3"
+log = "0.3"
+typeable = "0.1"
+traitobject = "0.0"
+serde = "0.8"
+serde_json = "0.8"
+
+[dependencies.cookie]
+version = "0.3"
+default-features = false
+
+[dependencies.iron]
+optional = true
+version = "0.4"
+
+[dependencies.bodyparser]
+optional = true
+version = "0.4"
+
+[dependencies.plugin]
+optional = true
+version = "0.2"
+
+[dependencies.hyper]
+version = "0.9"
+default-features = false
